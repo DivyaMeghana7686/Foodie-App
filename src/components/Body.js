@@ -1,10 +1,11 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState,useEffect } from "react";
-import resObjs from "../utils/mockData";
+// import resObjs from "../utils/mockData";
 import { DATA_URL } from "../utils/constants";
+import Shimmer from "./Shimmer";
 
 const Body=()=>{
-    const [listObjs, setListObjs]=useState(resObjs.restaurants);
+    const [listObjs, setListObjs]=useState([]);
     useEffect(()=>{
         fetchData();
     },[]);
@@ -16,8 +17,13 @@ const Body=()=>{
 
         const json=await data.json();
         console.log(json);
-        setListObjs(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        //Optional Chaining
+        setListObjs(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
+
+    if(listObjs.length === 0){
+        return <Shimmer />;
+    }
     
 
     return (
