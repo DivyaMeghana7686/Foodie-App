@@ -1,0 +1,34 @@
+{
+  "name": "foodie-app",
+  "version": "1.0.0",
+  "description": "This is a food ordering app",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DivyaMeghana7686/Foodie-App.git"
+  },
+  "keywords": [
+    "React",
+    "food",
+    "UI",
+    "design",
+    "render"
+  ],
+  "author": "Meghana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DivyaMeghana7686/Foodie-App/issues"
+  },
+  "homepage": "https://github.com/DivyaMeghana7686/Foodie-App#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
