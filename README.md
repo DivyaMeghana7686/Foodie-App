@@ -4,7 +4,7 @@ A food Ordering App
 
  * Main planning of our web app
  * Header
-        *Logo
+<br><br>Logo
         *Nav-items
  * Body
         *Search
