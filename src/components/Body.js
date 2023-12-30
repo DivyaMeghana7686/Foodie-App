@@ -6,6 +6,9 @@ import Shimmer from "./Shimmer";
 
 const Body=()=>{
     const [listObjs, setListObjs]=useState([]);
+    const [filListObjs, setFilListObjs]=useState([]);
+
+    const [searchText, setSearchText]=useState([""]);
     useEffect(()=>{
         fetchData();
     },[]);
@@ -19,20 +22,28 @@ const Body=()=>{
         console.log(json);
         //Optional Chaining
         setListObjs(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilListObjs(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     };
 
-    if(listObjs.length === 0){
-        return <Shimmer />;
-    }
-    
-
-    return (
+    //Conditional Rendering
+    return (listObjs.length === 0) ? <Shimmer/> : (
         <div className="body">
             <div className="search_bar">
-                <input placeholder="Select Foods" className="search-input border"/>
-                <div className="search-icon border">
-                    <i className="fa-solid fa-magnifying-glass"></i>
-                </div>
+                <input type="text" className="search-box border" value={searchText}
+                    onChange={(e)=> {
+                        setSearchText(e.target.value);
+                    }}
+                />
+                
+                <button className="search-btn border"
+                    onClick={() => {
+                            const filteredList= listObjs.filter(
+                                (restaurant) => restaurant.info.name.toLowerCase().includes(searchText.toLowerCase())
+                            );
+                            setFilListObjs(filteredList);
+                        }}
+                >Search</button>
+                
             </div>
             <div className="filter">
                     <button 
@@ -41,14 +52,14 @@ const Body=()=>{
                             const filteredList= listObjs.filter(
                                 (restaurant) => restaurant.info.avgRating > 4
                             );
-                            setListObjs(filteredList);
+                            setFilListObjs(filteredList);
                         }}>
                         Top Rated Restaurants
                     </button>
             </div>
             <div className="res-container">
                 {
-                   listObjs.map((restaurant) => (
+                   filListObjs.map((restaurant) => (
                         <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
                    ))
                 }

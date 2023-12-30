@@ -1,4 +1,4 @@
-import {LOGO_URL} from "../utils/constants";
+import {LOGO_URL} from "../utils/images/logo.jpg";
 const Header=()=>{
     return(
         <div className="header border">
