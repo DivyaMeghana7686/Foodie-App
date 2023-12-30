@@ -4,19 +4,19 @@ A food Ordering App
 
  * Main planning of our web app
  * Header
-<br><br>Logo
-        *Nav-items
+ * --Logo
+ * --Nav-items
  * Body
-        *Search
-        *Restaurant Container
-            *Restro cards
-              *Name of Restaurant
-              *Delivery Time
-              *images
-              *Rating
-              *Cuisine
+ * --Search
+ * --Restaurant Container
+ * ----Restro cards
+ * ----Name of Restaurant
+ * ----Delivery Time
+ * ----images
+ * ----Rating
+ * ----Cuisine
  * Footer
-       *Links
+ * --Links
   
  
 
