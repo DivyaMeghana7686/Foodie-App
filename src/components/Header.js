@@ -1,4 +1,6 @@
 import {LOGO_URL} from "../utils/images/logo.jpg";
+import {Link} from "react-router-dom";
+
 const Header=()=>{
     return(
         <div className="header border">
@@ -10,11 +12,12 @@ const Header=()=>{
                 />
             </div>
             <div className="nav-items">
-                <p>Home</p>
-                <p>About Us</p>
-                <p> Contact Us</p>
+                <p><Link to="/">Home</Link></p>
+                <p><Link to="/about">About Us</Link></p>
+                <p><Link to="/contact">Contact Us</Link></p>
                 <p>Cart</p>
             </div>
+            
         </div>
     );
 };
