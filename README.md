@@ -1,7 +1,7 @@
 # Foodie-App
-A food Ordering App 
+A food Ordering App UI developed from React JS
 
 
 
 
-token: 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
+
